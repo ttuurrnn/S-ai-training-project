@@ -20,7 +20,7 @@ Before you begin, ensure you have Python installed on your machine. You'll also 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/my-diet-app.git
+    git clone https://github.com/ttuurrnn/my-diet-app.git
     cd my-diet-app
     ```
 
