@@ -1,9 +1,10 @@
-
+from flask import Flask, request, render_template, redirect, url_for, session
 import requests
-from flask import Flask, request, render_template, redirect, url_for
 import json
+import pandas as pd
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key_here'  # Replace with a real secret key
 
 # Fat Secret API 설정
 TOKEN_URL = 'https://oauth.fatsecret.com/connect/token'
@@ -11,8 +12,9 @@ FOOD_SEARCH_URL = 'https://platform.fatsecret.com/rest/server.api'
 FOOD_GET_URL = 'https://platform.fatsecret.com/rest/server.api'
 RECIPE_SEARCH_URL = 'https://platform.fatsecret.com/rest/server.api'
 RECIPE_GET_URL = 'https://platform.fatsecret.com/rest/server.api'
-CLIENT_ID = 'af50165545af4de29b997291cdd2033d'
-CLIENT_SECRET = 'b8936b6f889846d0b68f79a9d424fda9'
+
+CLIENT_ID = '2c91f28e84ba4471820a106ea8abc0dc'  # 실제 Client ID로 변경
+CLIENT_SECRET = '27f217b350a645fa99b6c91de4e5b800'  # 실제 Client Secret으로 변경
 
 OLLAMA_URL = 'http://localhost:11434/api/generate'
 OLLAMA_MODEL = 'llama3.1'
@@ -224,7 +226,7 @@ def recommend():
 
 레시피 데이터:
 {recipe_info}
-
+아래에 있는 음식명이랑 레시피는 위에 나와 있는 음식 데이터랑 레시피 데이터를 활용해서 보여줘. 그냥 음식명1, 음식명2가 아니라. 레시피도 똑같이 레시피 데이터를 활용해서 보여줘야 해
 아침:
 - [음식명1]: [칼로리] kcal, [단백질] g 단백질, [탄수화물] g 탄수화물, [지방] g 지방
 - [음식명2]: [칼로리] kcal, [단백질] g 단백질, [탄수화물] g 탄수화물, [지방] g 지방
